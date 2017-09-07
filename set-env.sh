@@ -9,7 +9,7 @@ fi
 echo "" >> ~/.bash_profile
 echo "export ORACLE_HOSTNAME=ORCL" >> ~/.bash_profile
 echo "export ORACLE_BASE=/u01/app/oracle" >> ~/.bash_profile
-echo "export ORACLE_HOME=\$ORACLE_BASE/product/11.2.0/dbhoe_1" >> ~/.bash_profile
+echo "export ORACLE_HOME=\$ORACLE_BASE/product/11.2.0/dbhome_1" >> ~/.bash_profile
 echo "export ORACLE_SID=ORCL" >> ~/.bash_profile
 echo "export PATH=.:\$ORACLE_HOME/bin:\$ORACLE_HOME/OPatch:\$ORACLE_HOME/jdk/bin:\$PATH" >> ~/.bash_profile
 echo "export LC_ALL=\"en_US\"" >> ~/.bash_profile
