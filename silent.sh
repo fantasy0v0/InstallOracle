@@ -10,3 +10,8 @@ sh ~/oracle/set-env.sh
 
 # 解压
 unzip linuxx64_12201_database.zip
+
+cd database
+
+# 开始安装
+sh ./runInstaller -silent -force -noconfig -responseFile ~/oracle/db.rsp
