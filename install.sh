@@ -45,6 +45,7 @@ su - oracle -c "sh silent.sh"
 # 但是是根据之前的db.rsp来执行的，所以可以不用响应文件
 # 数据库的安装比较慢，需要tailf日志来查看是否安装完成 /u01/app/oraInventory/logs
 # /home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent
+# 安装完启动数据库会提示找不到initORACLE.ora
 
 # 配置默认监听
 # $ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
