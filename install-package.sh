@@ -3,9 +3,9 @@
 # 默认情况下CentOS 7需要安装的程序包
 package=(compat-libcap1 gcc-c++ ksh libaio-devel)
 
-for line in $package
+for line in ${package[@]}
 do
-	echo "installing $line..."
+    echo "installing $line..."
     yum install $line -y
 done
 
