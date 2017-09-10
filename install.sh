@@ -11,6 +11,12 @@ sh add-swap.sh
 # 安装程序包
 sh install-package.sh
 
+# 修改内核参数
+sh sysctl.sh
+
+# 修改限制
+sh limits.sh
+
 # 新增用户与用户组
 sh make-group-user.sh
 
@@ -18,16 +24,14 @@ sh make-group-user.sh
 sh make-dir.sh
 
 # 修改属主为oracle
-chown oracle:oinstall set-env.sh
+chown -R oracle:oinstall oracle
 # 并移动到oracle家目录下
-mv set-env.sh /home/oracle
-
-# 添加环境变量
-su - oracle -c "sh ~/set-env.sh"
+mv -rv oracle /home/oracle
 
 # 修改oracle安装文件压缩包的属主
 chown oracle:oinstall linuxx64_12201_database.zip
 # 移动到oracle家目录
 mv linuxx64_12201_database.zip /home/oracle
-# 解压
-su - oracle -c "unzip linuxx64_12201_database.zip"
+
+# 执行静默安装
+su - oracle -c "silent.sh"

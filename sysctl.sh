@@ -1,9 +1,4 @@
 #!/bin/sh
-user=`whoami`
-if [ "root" != $user ];then
-    echo "The current user is not root."
-    exit
-fi
 
 filePath="/etc/sysctl.d/99-oracle.conf"
 

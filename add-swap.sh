@@ -1,12 +1,5 @@
 #!/bin/sh
 
-#需要在root下执行
-user=`whoami`
-if [ "root" != $user ];then
-    echo "The current user is not root."
-    exit
-fi
-
 # oracle需要4G的swap，但CentOS7默认下只有2G
 dd if=/dev/zero of=/swap_4G bs=1024 count=4194304
 mkswap /swap_4G
