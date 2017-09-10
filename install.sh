@@ -40,3 +40,7 @@ su - oracle -c "silent.sh"
 # /u01/app/oraInventory/orainstRoot.sh
 # /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
 # sh orainstRoot.sh
+# /home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/db.rsp
+
+# 配置监听
+# $ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
