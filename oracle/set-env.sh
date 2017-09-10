@@ -8,7 +8,6 @@ fi
 filePath=~/.bash_profile
 
 echo "" >> $filePath
-echo "export ORACLE_HOSTNAME=ORCL" >> $filePath
 echo "export ORACLE_BASE=/u01/app/oracle" >> $filePath
 echo "export ORACLE_HOME=\$ORACLE_BASE/product/12.2.0/dbhome_1" >> $filePath
 echo "export ORACLE_SID=ORCL" >> $filePath
