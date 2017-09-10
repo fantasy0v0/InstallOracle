@@ -15,3 +15,5 @@ cd database
 
 # 开始安装
 sh ./runInstaller -silent -force -noconfig -responseFile ~/oracle/db.rsp
+
+echo "Installing..."

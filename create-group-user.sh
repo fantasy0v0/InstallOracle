@@ -9,3 +9,5 @@ groupadd asmadmin
 groupadd asmdba
 # oinstall 为主要组，并且要确保目录 /home/oracle 不存在
 useradd -g oinstall -G dba,asmdba oracle -d /home/oracle
+
+echo "Create group、user is Completed."

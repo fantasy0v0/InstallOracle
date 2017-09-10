@@ -7,3 +7,5 @@ chown -R oracle:oinstall /u01
 
 # 设置目录权限
 chmod -R 755 /u01
+
+echo "mkdir is Completed."

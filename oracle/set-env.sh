@@ -20,3 +20,5 @@ echo "export DISTRIB=/u01/database" >> $filePath
 echo "" >> $filePath
 
 . $filePath
+
+echo "set env is Completed."

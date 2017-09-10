@@ -10,3 +10,5 @@ echo "net.core.rmem_max=4194304" >> $filePath
 echo "net.core.wmem_default=262144" >> $filePath
 echo "net.core.wmem_max=1048576" >> $filePath
 sysctl -p $filePath
+
+echo "sysctl is Completed."
