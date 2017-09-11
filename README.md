@@ -1,5 +1,5 @@
 # InstallOracle
-## 记录安装Oracle的过程
+记录安装Oracle的过程
 
 ## 在以下环境下测试通过
 
