@@ -37,14 +37,16 @@ mv linuxx64_12201_database.zip /home/oracle
 # 执行静默安装
 su - oracle -c "sh silent.sh"
 
-# 由于不知道oracle什么时候安装完成，所以要手动执行以下脚本
-# /u01/app/oraInventory/orainstRoot.sh
-# /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
+echo "由于不知道oracle什么时候安装完成，所以要在安装完成后手动执行以下脚本"
+echo "/u01/app/oraInventory/orainstRoot.sh"
+echo "/u01/app/oracle/product/12.2.0/dbhome_1/root.sh"
 
+echo "在oracle用户下执行监听配置和安装数据库"
 # 配置监听和安装数据库，这一步是下面步骤的整合
 # 根据之前的db.rsp来执行的，所以可以不用单独编写响应文件
-# 数据库的安装比较慢，需要tailf日志来查看是否安装完成 /u01/app/oraInventory/logs
-# /home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent
+echo "/home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent"
+
+echo "数据库的安装比较慢，需要tailf日志来查看是否安装完成 /u01/app/oraInventory/logs"
 
 # 配置默认监听
 # $ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
