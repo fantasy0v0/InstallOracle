@@ -231,7 +231,7 @@ oracle.install.db.config.starterdb.memoryOption=false
 # on the system.
 # Example: oracle.install.db.config.starterdb.memoryLimit=512
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.memoryLimit=1960
+oracle.install.db.config.starterdb.memoryLimit=512
 
 #-------------------------------------------------------------------------------
 # This variable controls whether to load Example Schemas onto
