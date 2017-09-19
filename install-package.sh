@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 默认情况下CentOS 7需要安装的程序包
-package=(compat-libcap1 gcc-c++ ksh libaio-devel)
+package=(compat-libcap1 gcc-c++ ksh libaio-devel unzip)
 
 for line in ${package[@]}
 do
