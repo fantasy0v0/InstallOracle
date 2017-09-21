@@ -3,7 +3,11 @@
 
 ## 在以下环境下测试通过
 
-CentOS Linux release 7.3.1611
+CentOS Linux release 7.3.1611 最小化安装
+
+Mem:4G
+
+Disk:40G
 
 Oracle Database 12c Release 2
 
