@@ -9,7 +9,7 @@ echo "net.core.rmem_default=262144" >> $filePath
 echo "net.core.rmem_max=4194304" >> $filePath
 echo "net.core.wmem_default=262144" >> $filePath
 echo "net.core.wmem_max=1048576" >> $filePath
-echo "kernel.shmall=2097152" >> $filePath
+# echo "kernel.shmall=2097152" >> $filePath
 echo "fs.aio-max-nr=1048576" >> $filePath
 sysctl -p $filePath
 
