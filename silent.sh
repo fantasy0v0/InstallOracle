@@ -17,3 +17,15 @@ cd database
 sh ./runInstaller -silent -force -noconfig -responseFile ~/oracle/db.rsp
 
 echo "Installing..."
+
+# 判断安装程序是否结束
+while true
+do
+	count=$(ps -ef | grep '/runInstaller -silent' | grep -v grep | awk '{print $2}' | wc -l)
+	if [ $count = 0 ] then
+		break
+	fi
+	sleep 5
+done
+
+echo "Installed"

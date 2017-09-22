@@ -37,6 +37,8 @@ mv linuxx64_12201_database.zip /home/oracle
 # 执行静默安装
 su - oracle -c "sh silent.sh"
 
+sh /u01/app/oraInventory/orainstRoot.sh
+sh /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
 echo "由于不知道oracle什么时候安装完成，所以要在安装完成后手动执行以下脚本"
 echo "/u01/app/oraInventory/orainstRoot.sh"
 echo "/u01/app/oracle/product/12.2.0/dbhome_1/root.sh"
