@@ -37,20 +37,36 @@ mv linuxx64_12201_database.zip /home/oracle
 # 执行静默安装
 su - oracle -c "sh silent.sh"
 
-sh /u01/app/oraInventory/orainstRoot.sh
-sh /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
-echo "由于不知道oracle什么时候安装完成，所以要在安装完成后手动执行以下脚本"
-echo "/u01/app/oraInventory/orainstRoot.sh"
-echo "/u01/app/oracle/product/12.2.0/dbhome_1/root.sh"
+# 安装后的配置
+/u01/app/oraInventory/orainstRoot.sh
+/u01/app/oracle/product/12.2.0/dbhome_1/root.sh
 
-echo "在oracle用户下执行监听配置和安装数据库"
 # 配置监听和安装数据库，这一步是下面步骤的整合
 # 根据之前的db.rsp来执行的，所以可以不用单独编写响应文件
-echo "/home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent"
-
-echo "数据库的安装比较慢，需要tailf日志来查看是否安装完成 /u01/app/oraInventory/logs"
-
+# /home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent
+# 数据库的安装比较慢，需要tailf日志来查看是否安装完成 /u01/app/oraInventory/logs
 # 配置默认监听
 # $ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
 # 安装数据库
 # $ORACLE_HOME/bin/dbca -silent -responseFile /home/oracle/database/response/dbca.rsp
+
+su - oracle -c "/home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent"
+# 判断安装程序是否结束
+while true
+do
+	count=$(ps -ef | grep '/runInstaller' | grep -v grep | awk '{print $2}' | wc -l)
+	if [ $count -eq 0 ]; then
+		break
+	fi
+	sleep 5
+done
+while true
+do
+	count=$(ps -ef | grep 'oracle.installer' | grep -v grep | awk '{print $2}' | wc -l)
+	if [ $count -eq 0 ]; then
+		break
+	fi
+	sleep 5
+done
+
+echo "Installed"
