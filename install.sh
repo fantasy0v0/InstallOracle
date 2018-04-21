@@ -5,6 +5,9 @@ if [ "root" != $user ];then
     exit
 fi
 
+# 进入脚本所在目录
+cd `dirname $0`
+
 # 增加虚拟内存
 sh add-swap.sh
 
@@ -50,23 +53,5 @@ su - oracle -c "sh silent.sh"
 # 安装数据库
 # $ORACLE_HOME/bin/dbca -silent -responseFile /home/oracle/database/response/dbca.rsp
 
-su - oracle -c "/home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent"
-# 判断安装程序是否结束
-while true
-do
-	count=$(ps -ef | grep '/runInstaller' | grep -v grep | awk '{print $2}' | wc -l)
-	if [ $count -eq 0 ]; then
-		break
-	fi
-	sleep 5
-done
-while true
-do
-	count=$(ps -ef | grep 'oracle.installer' | grep -v grep | awk '{print $2}' | wc -l)
-	if [ $count -eq 0 ]; then
-		break
-	fi
-	sleep 5
-done
-
+su - oracle -c "/home/oracle/database/runInstaller -executeConfigTools  -waitforcompletion -responseFile /home/oracle/oracle/db.rsp -silent"
 echo "Installed"
