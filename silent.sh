@@ -13,27 +13,11 @@ unzip linuxx64_12201_database.zip
 
 cd database
 
-# 开始安装
-sh ./runInstaller -silent -force -noconfig -responseFile ~/oracle/db.rsp
-
 echo "Installing..."
-
-# 判断安装程序是否结束
-while true
-do
-	count=$(ps -ef | grep '/runInstaller' | grep -v grep | awk '{print $2}' | wc -l)
-	if [ $count -eq 0 ]; then
-		break
-	fi
-	sleep 5
-done
-while true
-do
-	count=$(ps -ef | grep 'oracle.installer' | grep -v grep | awk '{print $2}' | wc -l)
-	if [ $count -eq 0 ]; then
-		break
-	fi
-	sleep 5
-done
+# 开始安装
+sh ./runInstaller -silent -waitforcompletion -noconfig -responseFile ~/oracle/db.rsp
 
 echo "Installed"
+
+$ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
+$ORACLE_HOME/bin/dbca -silent -responseFile ~/oracle/dbca.rsp

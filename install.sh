@@ -45,13 +45,8 @@ su - oracle -c "sh silent.sh"
 /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
 
 # 配置监听和安装数据库，这一步是下面步骤的整合
-# 根据之前的db.rsp来执行的，所以可以不用单独编写响应文件
-# /home/oracle/database/runInstaller -executeConfigTools -responseFile /home/oracle/oracle/db.rsp -silent
 # 数据库的安装比较慢，需要tailf日志来查看是否安装完成 /u01/app/oraInventory/logs
 # 配置默认监听
 # $ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
 # 安装数据库
 # $ORACLE_HOME/bin/dbca -silent -responseFile /home/oracle/database/response/dbca.rsp
-
-su - oracle -c "/home/oracle/database/runInstaller -executeConfigTools  -waitforcompletion -responseFile /home/oracle/oracle/db.rsp -silent"
-echo "Installed"
