@@ -37,16 +37,14 @@ chown oracle:oinstall linuxx64_12201_database.zip
 # 移动到oracle家目录
 mv linuxx64_12201_database.zip /home/oracle
 
+# 设置环境变量
+su - oracle -c "sh ~/oracle/set-env.sh"
+
 # 执行静默安装
-su - oracle -c "sh silent.sh"
+su - oracle -c "sh ~/silent.sh"
 
 # 安装后的配置
 /u01/app/oraInventory/orainstRoot.sh
 /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
 
-# 配置监听和安装数据库，这一步是下面步骤的整合
-# 数据库的安装比较慢，需要tailf日志来查看是否安装完成 /u01/app/oraInventory/logs
-# 配置默认监听
-# $ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
-# 安装数据库
-# $ORACLE_HOME/bin/dbca -silent -responseFile /home/oracle/database/response/dbca.rsp
+echo "End."

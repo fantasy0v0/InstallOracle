@@ -5,9 +5,6 @@ if [ "oracle" != $user ];then
     exit
 fi
 
-# 设置环境变量
-sh ~/oracle/set-env.sh
-
 # 解压
 unzip linuxx64_12201_database.zip
 
@@ -15,9 +12,11 @@ cd database
 
 echo "Installing..."
 # 开始安装
-sh ./runInstaller -silent -waitforcompletion -noconfig -responseFile ~/oracle/db.rsp
-
+sh ./runInstaller -silent -showProgress -waitforcompletion -responseFile ~/oracle/db.rsp
 echo "Installed"
 
-$ORACLE_HOME/bin/netca /silent /responsefile /home/oracle/database/response/netca.rsp
-$ORACLE_HOME/bin/dbca -silent -responseFile ~/oracle/dbca.rsp
+# 安装数据库
+$ORACLE_HOME/bin/dbca -silent -createDatabase -responseFile ~/oracle/dbca.rsp
+
+# 配置监听
+$ORACLE_HOME/bin/netca /silent /responsefile ~/database/response/netca.rsp

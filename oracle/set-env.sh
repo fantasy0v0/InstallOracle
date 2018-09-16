@@ -5,7 +5,7 @@ if [ "oracle" != $user ];then
     exit
 fi
 
-filePath=~/.bash_profile
+filePath=~/.bashrc
 
 echo "" >> $filePath
 echo "export ORACLE_BASE=/u01/app/oracle" >> $filePath
@@ -18,7 +18,5 @@ echo "export NSL_LANG=\"AMERICAN_AMERICA.ZHS16GBK\"" >> $filePath
 echo "export NLS_DATE_FORMAT=\"YYYY-MM-DD HH24:MI:SS\"" >> $filePath
 echo "export DISTRIB=/u01/database" >> $filePath
 echo "" >> $filePath
-
-. $filePath
 
 echo "set env is Completed."

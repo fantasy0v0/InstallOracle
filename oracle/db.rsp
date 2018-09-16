@@ -184,7 +184,7 @@ oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
 #-------------------------------------------------------------------------------
 # Specify the Starter Database Global Database Name. 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.globalDBName=orcl
+oracle.install.db.config.starterdb.globalDBName=orcl.centos.net
 
 #-------------------------------------------------------------------------------
 # Specify the Starter Database SID.
@@ -325,7 +325,7 @@ oracle.install.db.config.starterdb.emAdminPassword=
 # This variable is to be set to false if database recovery is not required. Else 
 # this can be set to true.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.enableRecovery=false
+oracle.install.db.config.starterdb.enableRecovery=true
 
 #-------------------------------------------------------------------------------
 # Specify the type of storage to use for the database.
@@ -348,7 +348,7 @@ oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/u01/app/oracl
 #
 # Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
+oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=/u01/app/oracle/recovery_area
 
 #-------------------------------------------------------------------------------
 # Specify the existing ASM disk groups to be used for storage.

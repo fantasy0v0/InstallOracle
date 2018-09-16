@@ -29,7 +29,7 @@ responseFileVersion=/oracle/assistants/rspfmt_dbca_response_schema_v12.2.0
 # Default value : None
 # Mandatory     : Yes
 #-----------------------------------------------------------------------------
-gdbName=Orcl
+gdbName=orcl
 
 #-----------------------------------------------------------------------------
 # Name          : sid
@@ -465,7 +465,7 @@ recoveryGroupName=
 # Default value : "US7ASCII"
 # Mandatory     : NO
 #-----------------------------------------------------------------------------
-characterSet=
+characterSet=AL32UTF8
 
 #-----------------------------------------------------------------------------
 # Name          : nationalCharacterSet
