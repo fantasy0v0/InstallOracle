@@ -26,4 +26,5 @@ linuxx64_12201_database.zip
 ## 参考
 
 >http://www.cnblogs.com/ylqmf/archive/2012/04/16/2451211.html
+
 >https://docs.oracle.com/en/database/oracle/oracle-database/12.2/index.html
